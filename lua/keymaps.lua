@@ -62,5 +62,25 @@ vim.keymap.set('n', '<C-h>', ':wincmd h<CR>')
 vim.keymap.set('n', '<C-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<C-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<C-l>', ':wincmd l<CR>')
+
+-- function to toggle relative/nonrelative line numbers
+NumberToggle = function()
+  if vim.o.number == false then
+    --set number
+    vim.o.number = true
+  else
+    vim.o.relativenumber = true
+  end
+end
+
+local function ToggleNumber()
+  if vim.o.number == false then
+    vim.o.number = true
+  else
+    vim.o.relativenumber = true
+  end
+end
+
+vim.keymap.set('n', 'C-b', function() ToggleNumber() end) 
 -- vim: ts=2 sts=2 sw=2 et
 
