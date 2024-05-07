@@ -65,14 +65,17 @@ vim.keymap.set("n", "<C-k>", ":wincmd k<CR>")
 vim.keymap.set("n", "<C-l>", ":wincmd l<CR>")
 
 -- INFO: Set swenv keymap to select venv
-vim.keymap.set("n", "<leader>vs", function()
-  require("swenv.api").pick_venv()
-end, { desc = "[Venv] [s]elect" })
+-- vim.keymap.set("n", "<leader>vs", function()
+--   require("swenv.api").pick_venv()
+-- end, { desc = "[Venv] [s]elect" })
 
--- TODO: plenary commands
+-- INFO: plenary commands
 vim.keymap.set("n", "]t", function()
   require("todo-comments").jump_next()
 end, { desc = "Next todo comment" })
+
+-- INFO: set venv-selector keymap
+vim.keymap.set("n", "<leader>vs", "<cmd>VenvSelect<CR>", { desc = "[V]env [S]elector" })
 
 vim.keymap.set("n", "[t", function()
   require("todo-comments").jump_prev()
