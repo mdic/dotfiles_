@@ -33,6 +33,7 @@ return {
       -- end
       --
       require("mini.pairs").setup()
+      require("mini.map").setup()
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
